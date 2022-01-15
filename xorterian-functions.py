@@ -1,11 +1,13 @@
 import math
 
-# 8-bit int -> int reversion
+# 8-bit int -> int reversion (palindrome)
+# For instance rev(52) = 44, because the reverse of 52 = 0b00110100 is 44 = 0b00101100.
 def rev(n):
   return int('{:08b}'.format(n)[::-1], 2)
 
-
 # (real, real) -> real Xoration based on real r arity
+# E.g. xor(5, 10, 3) = 12.
+# abs(a-b) <= xor(a, b, r) <= a+b
 def xor(x,y,r):
  Z=[]
  while x >= 1 or y >= 1:
@@ -48,6 +50,7 @@ def or(x,y,r):
  return z
 
 # returns the dict of (divisors, multilicity) or the int n
+# divs(5075) = {5: 2, 7: 1, 29: 1}
 def divs(n):
  Divs=[]
  Res={}
@@ -64,6 +67,7 @@ def divs(n):
  return Res
 
 # returns the superated representation of a rational number n
+# surep(1.5) = {2: -1, 3: 1, 5: 0}, because 2**-1 * 3**1 * 5**0 = 3/2 = 1.5
 def surep(n,eps=10**-6):
  k=0
  while n % 1 > eps:
@@ -100,4 +104,3 @@ def suxor(x,y,r):
   C[p]=xor(a,b,r)
   z*=p**C[p]
  return z
-
