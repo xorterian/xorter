@@ -10,10 +10,9 @@ def rev(n):
 # abs(a-b) <= xor(a, b, r) <= a+b
 def xor(x,y,r):
  Z=[]
- while x >= 1 or y >= 1:
+ while x or y:
   Z.append((x+y) % r)
-  x=x//r
-  y=y//r
+  x,y = x//r,y//r
  Z=Z[::-1]
  z=0
  #ref=0
@@ -24,10 +23,9 @@ def xor(x,y,r):
 # (real, real) -> real Andation based on real r arity
 def and(x,y,r):
  Z=[]
- while x >= 1 or y >= 1:
+ while x or y:
   Z.append(min(x,y) % r)
-  x=x//r
-  y=y//r
+  x,y = x//r,y//r
  Z=Z[::-1]
  z=0
  #ref=0
@@ -38,10 +36,9 @@ def and(x,y,r):
 # (real, real) -> real Oration based on real r arity
 def or(x,y,r):
  Z=[]
- while x >= 1 or y >= 1:
+ while x or y:
   Z.append(max(x,y) % r)
-  x=x//r
-  y=y//r
+  x,y = x//r,y//r
  Z=Z[::-1]
  z=0
  #ref=0
@@ -49,7 +46,7 @@ def or(x,y,r):
   z+=Z[i]*r**(len(Z)-i-1)
  return z
 
-# returns the dict of (divisors, multilicity) or the int n
+# returns the dict of (divisors, multilicities) of the int n
 # divs(5075) = {5: 2, 7: 1, 29: 1}
 def divs(n):
  Divs=[]
