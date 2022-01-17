@@ -13,35 +13,7 @@ def xor(x,y,r):
  while x or y:
   Z.append((x+y) % r)
   x,y = x//r,y//r
- Z=Z[::-1]
- z=0
- #ref=0
- for i in range(len(Z)):
-  z+=Z[i]*r**(len(Z)-i-1)
- return z
-
-# (real, real) -> real Andation based on real r arity
-def and(x,y,r):
- Z=[]
- while x or y:
-  Z.append(min(x,y) % r)
-  x,y = x//r,y//r
- Z=Z[::-1]
- z=0
- #ref=0
- for i in range(len(Z)):
-  z+=Z[i]*r**(len(Z)-i-1)
- return z
-
-# (real, real) -> real Oration based on real r arity
-def or(x,y,r):
- Z=[]
- while x or y:
-  Z.append(max(x,y) % r)
-  x,y = x//r,y//r
- Z=Z[::-1]
- z=0
- #ref=0
+ z,Z = 0,Z[::-1]
  for i in range(len(Z)):
   z+=Z[i]*r**(len(Z)-i-1)
  return z
@@ -49,8 +21,7 @@ def or(x,y,r):
 # returns the dict of (divisors, multilicities) of the int n
 # divs(5075) = {5: 2, 7: 1, 29: 1}
 def divs(n):
- Divs=[]
- Res={}
+ Divs,Res = [],{}
  d=1
  while n>1:
   d+=1
