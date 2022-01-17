@@ -1,10 +1,5 @@
 import math
 
-# 8-bit int -> int reversion (palindrome)
-# For instance rev(52) = 44, because the reverse of 52 = 0b00110100 is 44 = 0b00101100.
-def rev(n):
-  return int('{:08b}'.format(n)[::-1], 2)
-
 # (real, real) -> real Xoration based on real r arity
 # E.g. xor(5, 10, 3) = 12.
 # abs(a-b) <= xor(a, b, r) <= a+b
@@ -72,3 +67,14 @@ def suxor(x,y,r):
   C[p]=xor(a,b,r)
   z*=p**C[p]
  return z
+
+# twicity in an arity, which simply-to-say means an L-length R-ary representation of a number x.
+# int -> string operator
+def twc(x, layer=8, arity=2):
+  return ''.join(reversed( [str(min(arity-1, round(math.floor(x/arity**(i)) - arity*math.floor(math.floor(x/arity**(i))/arity)) )) for i in range(layer)] ) )
+
+# In default mode: 8-bit int -> int reversion (palindrome)
+# For instance rev(52) = 44, because the reverse of 52 = 0b00110100 is 44 = 0b00101100.
+# In general you can choose your length (layer) and arity (arity).
+def rev(x, layer=8, arity=2):
+  return int(twc(x,layer,arity)[::-1],arity)
