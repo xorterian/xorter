@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Xoration</title>
+</head>
+<body class="b">
+<table align="center">
+ <tr>
+  <th><canvas id="myCanvas" width="512" height="512" style="border:1px solid #d3d3d3;">
+  Your browser does not support the HTML5 canvas tag.</canvas></th>
+ </tr>
+</table>
+
+<script>
+window.onload = function() {
+ var canvas = document.getElementById("myCanvas"); 
+ var context = canvas.getContext("2d");
+ var width = canvas.width;
+ var height = canvas.height;
+ var imagedata = context.createImageData(width, height);
+ function createImage(t) {
+  t=Math.floor(t/100)
+  for (var x=0; x<width; x++) {
+   for (var y=0; y<height; y++) {
+    var pixelindex = (y * width + x) * 4;
+    // Here is the place you can write your own two-variable function:
+	  var R = (x+t)^(y+t)^(2*x+2*t)^(2*y+2*t);
+    R=(R+t*10)%256;
+    imagedata.data[pixelindex] = R;     // Red
+    imagedata.data[pixelindex+1] = R; // Green
+    imagedata.data[pixelindex+2] = R;  // Blue
+    imagedata.data[pixelindex+3] = 255;   // Alpha
+   }
+  }
+ }
+ function main(t) {
+  window.requestAnimationFrame(main);
+  createImage(t);
+  context.putImageData(imagedata, 0, 0);
+ }
+main(0);
+};
+//Source: https://rembound.com/articles/drawing-pixels-with-html5-canvas-and-javascript
+</script> 
+</body>
+</html>
