@@ -1,7 +1,7 @@
 - 👋🏻 Hi, I’m @xorterian from Budapest!
 - 👀 I’m interested in fractals, multi-valued logics, anaglyphs, data science/ML (DNNs, ANNs based on non-linear perceptrons), complexity theory, tetration, functional equations, 3-D printing, bioinformatics, etc.
 - 👨🏻‍🎓 I've graduated in Computer Science BSc (the title of my diploma thesis was Functional completeness of many-valued logics and its applications).
-- 🧠 I studied a semester in Biomedical Engineer MSc (my laboratory work was about BCIs mostly about processing its data based on AI).
+- 🧠 I studied two semesters in Biomedical Engineer MSc (my laboratory work was about BCIs mostly about processing its data based on AI).
 - 🧮 I hope I will have been studying Applied Mathematics MSc in the future.
-- 🌱 I’m currently looking for job related to my studies.
-- 📫 vkristof211@gmail.com
+- 🌱 I’m currently working for Bosch as a SW engineer.
+- 📫 voros.kristof@mensa.hu
