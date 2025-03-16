@@ -7,5 +7,5 @@
 - 🧠 I studied two semesters in Biomedical Engineer MSc (the laboratory work was about BCIs mostly about processing its data based on AI).
 - 🖥 I’ve worked for Bosch as a SW engineer for 1.5 years.
 - 🧮 I'm currently studying Applied Mathematics MSc (University of Óbuda, planned graduation is by June of 2025).
-- 🔍 I'll have been opened for job offers by the end of August.
+- 💉 I'm currently also have a proud, half-time position in healthcare.
 - 📫 Feel free to contact me: voros.kristof@mensa.hu
